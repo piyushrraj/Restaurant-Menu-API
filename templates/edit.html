@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+
+ 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h2>✏️ Edit Menu Item</h2>
+
+<form method="POST" class="form">
+
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value="{{ item.name }}" required>
+
+    <label for="price">Price:</label>
+    <input id="price" type="number" name="price" value="{{ item.price }}" required>
+
+    <label for="category">Category:</label>
+    <input id="category" type="text" name="category" value="{{ item.category }}" required>
+
+    <button type="submit">Update</button>
+
+</form>
+
+<br>
+
+<a href="/" class="back-link">⬅ Back</a>
+
+</body>
+</html>

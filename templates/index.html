@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h2>🍽️ Restaurant Menu</h2>
+
+    <a href="/add">➕ Add New Item</a>
+    
+    <table>
+    <tr>
+    <th>Name</th><th>Price</th><th>Category</th><th>Action</th>
+    </tr>
+    
+    {% for item in items %}
+    <tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.price }}</td>
+    <td>{{ item.category }}</td>
+    <td>
+        <a href="/edit/{{ item._id }}">Edit</a>
+        <a href="/delete/{{ item._id }}" class="delete">Delete</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
