@@ -4,15 +4,22 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-
+# HOME PAGE
 @app.route('/')
+def home():
+    return render_template('home.html')
+
+# MENU PAGE (CRUD)
+@app.route('/menu')
 def index():
-    items = list(menu_collection.find())
+    try:
+        items = list(menu_collection.find())
+    except:
+        items = []
     return render_template('index.html', items=items)
 
-
-
-@app.route('/add', methods=['GET', 'POST'])
+# ADD
+@app.route('/add', methods=['GET','POST'])
 def add():
     if request.method == 'POST':
         menu_collection.insert_one({
@@ -20,12 +27,11 @@ def add():
             "price": float(request.form['price']),
             "category": request.form['category']
         })
-        return redirect('/')
+        return redirect('/menu')
     return render_template('add.html')
 
-
-
-@app.route('/edit/<id>', methods=['GET', 'POST'])
+# EDIT
+@app.route('/edit/<id>', methods=['GET','POST'])
 def edit(id):
     item = menu_collection.find_one({"_id": ObjectId(id)})
 
@@ -38,16 +44,15 @@ def edit(id):
                 "category": request.form['category']
             }}
         )
-        return redirect('/')
+        return redirect('/menu')
 
     return render_template('edit.html', item=item)
 
-
-
+# DELETE
 @app.route('/delete/<id>')
 def delete(id):
     menu_collection.delete_one({"_id": ObjectId(id)})
-    return redirect('/')
+    return redirect('/menu')
 
 
 if __name__ == "__main__":

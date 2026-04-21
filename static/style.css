@@ -1,84 +1,217 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f7fa;
-    margin: 20px;
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+.page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.card {
+    background: white;
+    padding: 50px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #333;
 }
 
 h2 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.form {
+    font-size: 28px;
     margin-bottom: 20px;
+    color: #333;
 }
 
-.form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+.subtitle {
+    color: #666;
+    margin: 15px 0 30px;
+    font-size: 16px;
 }
 
-.form input {
-    padding: 8px;
-    width: 250px;
+p {
+    color: #555;
+    font-size: 16px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.feature-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+.feature-box span {
+    font-size: 14px;
     margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 button {
-    margin-top: 12px;
-    padding: 8px 15px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+.main-btn {
+    display: inline-block;
+    width: 220px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: #43a047;
+}
+
+.update-btn {
+    width: 100%;
+    background-color: #2196F3;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #1976D2;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #2e7d32;
+}
+
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #999;
+}
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 table {
+    width: 100%;
     border-collapse: collapse;
-    width: 80%;
-    background: white;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 th {
-    background-color: #4CAF50;
+    background: #4CAF50;
     color: white;
-    padding: 10px;
+    padding: 12px;
+    font-size: 16px;
 }
 
 td {
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background: #f5f5f5;
 }
 
 a {
     text-decoration: none;
-    color: blue;
-    margin-right: 10px;
+    font-size: 15px;
 }
 
-a:hover {
-    text-decoration: underline;
+.edit {
+    color: #2196F3;
 }
 
-a.delete {
-    color: red;
+.delete {
+    color: #e53935;
+    margin-left: 10px;
 }
 
-.back-link {
-    display: inline-block;
+.form-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4CAF50;
+}
+
+.back-btn {
+    display: block;
     margin-top: 15px;
-    color: #333;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    color: #000;
 }
